@@ -1,6 +1,5 @@
 const express = require("express");
 const helmet = require("helmet");
-const path = require("path");
 
 const app = express();
 
@@ -17,19 +16,15 @@ const cspConfig = {
       "https://cdn.jsdelivr.net",
       "https://cdnjs.cloudflare.com",
     ],
-    styleSrc: [
-      "'self'",
-      "https://fonts.googleapis.com",
-      "https://cdnjs.cloudflare.com",
-    ],
+    styleSrc: ["'self'", "https://cdnjs.cloudflare.com"],
     imgSrc: [
       "'self'",
       "data:",
       "https://fastly.picsum.photos",
       "https://picsum.photos",
     ],
-    fontSrc: ["'self'", "https://cdnjs.cloudflare.com", "data:"],
-    connectSrc: ["'self'", "https://api.example.com"],
+    fontSrc: ["'self'", "data:", "https://cdnjs.cloudflare.com"],
+    connectSrc: ["'self'"],
     objectSrc: ["'none'"],
     upgradeInsecureRequests: null, // Disable auto-upgrade
   },
@@ -37,6 +32,7 @@ const cspConfig = {
 
 // Apply custom CSP configuration
 app.use(helmet.contentSecurityPolicy(cspConfig));
+
 app.use("/", express.static("public"));
 
 // Error handling middleware
