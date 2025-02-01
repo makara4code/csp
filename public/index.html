@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSP Demo Application</title>
+
+    <!-- External styles -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Inline styles -->
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/script.js" defer></script>
+    <script src="js/events.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header">
+        <h1>CSP Demo Application</h1>
+        <p class="lead">
+          A demonstration of Content Security Policy implementation
+        </p>
+      </div>
+
+      <!-- Features Section -->
+      <div class="card">
+        <div class="feature-item">
+          <h2>Security Features</h2>
+          <ul>
+            <li>✓ Content Security Policy enabled</li>
+            <li>✓ External resources from trusted sources</li>
+            <li>✓ Inline styles and scripts restricted</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Demo Section -->
+      <div class="card">
+        <div class="feature-item">
+          <h2>Demo Actions</h2>
+          <button class="demo-button load-script-btn">
+            Load External Script
+          </button>
+          <button class="demo-button load-style-btn">
+            Load External Style
+          </button>
+          <button class="demo-button load-image-btn">Load Image</button>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div class="card">
+        <div class="feature-item">
+          <h2>Results</h2>
+          <div id="results"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
